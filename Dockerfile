@@ -7,4 +7,4 @@ ENV GOPATH /gopath/app
 ADD . /gopath/app/
 RUN go get github.com/datc/pretty
 EXPOSE 8080
-CMD ["pretty"]
+CMD ["/gopath/app/bin/pretty"]
