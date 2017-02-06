@@ -2,8 +2,11 @@
 *.o
 *.a
 *.so
+pretty
+.DS_Store
 
 # Folders
+.idea
 _obj
 _test
 
