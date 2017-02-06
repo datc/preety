@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>番茄</title>
+    <link rel="stylesheet" type="text/css" href="jquery.ad-gallery.css">
+<style type="text/css">
+* {
+    margin: 0;
+    padding: 0;  
+    font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Verdana,Arial,sans-serif;
+    font-size: 12px;  
+    color: #333;
+    line-height: 140%;
+}
+body {
+    padding: 30px;
+}
+p {
+    padding: 10px 0 20px 0; 
+}
+
+#gallery {
+    padding: 30px;
+    background: #E1EEF5;
+    vertical-align: center;
+}
+#descriptions {
+    position: relative;
+    width: 640px;
+    height: 50px;
+    background: #EEEEEE;
+    /*padding: 10px;*/
+    /*margin-top: 10px;*/
+    overflow: hidden;
+}
+#descriptions .ad-image-description {
+    position: absolute;
+}
+#descriptions .ad-image-description .ad-description-title {
+    display: block;
+}
+</style> 
+</head>
+<body>
+    
+    <div id="gallery" class="ad-gallery">
+        <div class="ad-image-wrapper"></div>
+        <div class="ad-controls"></div>
+        <div class="ad-nav">            
+            <div class="ad-thumbs">
+                <ul class="ad-thumb-list">
+                    {{range $k,$v :=.gattery_cat}}
+                        <li>
+                            <a href="{{$v}}?imageView2/2/w/800/h/400" title="{{$v}}">
+                                <img src="{{$v}}?imageView2/2/h/100" class="image{{$k}}">
+                            </a>
+                        </li>
+                    {{end}}
+
+                   
+                <!--<li>
+                        <a href="image/7.jpg">
+                            <img src="image/t7.jpg" title="A title for 7.jpg" alt="This is a nice, and incredibly descriptive, description of the image 7.jpg" class="image11">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="image/8.jpg">
+                            <img src="image/t8.jpg" title="A title for 8.jpg" alt="This is a nice, and incredibly descriptive, description of the image 8.jpg" class="image12">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="image/9.jpg">
+                            <img src="image/t9.jpg" title="A title for 9.jpg" alt="This is a nice, and incredibly descriptive, description of the image 9.jpg" class="image13">
+                        </a>
+                    </li>-->
+                </ul>
+            </div>           
+        </div>
+    </div>
+
+    <div id="descriptions"></div>
+    <p>alter the behaviour on the fly;Effect: 
+        <select id="switch-effect">
+            <option value="slide-hori">Slide horizontal</option>
+            <option value="slide-vert">Slide vertical</option>
+            <option value="resize">Shrink/grow</option>
+            <option value="fade">Fade</option>
+            <option value="">None</option>
+        </select><br>
+    </p>
+
+<script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript" src="jquery.ad-gallery.js"></script>
+    
+
+<script type="text/javascript">
+
+$(function() {
+
+    // $('img.image1').data('ad-desc', 'Whoa! This description is set through elm.data("ad-desc") instead of using the longdesc attribute.<br>And it contains <strong>H</strong>ow <strong>T</strong>o <strong>M</strong>eet <strong>L</strong>adies... <em>What?</em> That aint what HTML stands for? Man...');
+    // $('img.image1').data('ad-title', 'Title through $.data');
+    // $('img.image4').data('ad-desc', 'This image is wider than the wrapper, so it has been scaled down');
+    // $('img.image5').data('ad-desc', 'This image is higher than the wrapper, so it has been scaled down');
+    var gallerys = $('#gallery').adGallery({
+        width: 1200,
+        height: 500,
+        scroll_jump: 0
+    });
+    // setTimeout(function() {
+    //     gallerys[0].addImage("image/t7.jpg", "image/7.jpg");
+    // }, 1000);
+    // setTimeout(function() {
+    //     gallerys[0].addImage("image/t8.jpg", "image/8.jpg");
+    // }, 2000);
+    // setTimeout(function() {
+    //     gallerys[0].addImage("image/t9.jpg", "image/9.jpg");
+    // }, 3000);
+    // setTimeout(function() {
+    //     gallerys[0].removeImage(1);
+    // }, 4000);
+    
+    $('#switch-effect').change(function() {
+        gallerys[0].settings.effect = $(this).val();
+        return false;
+    });
+    // $('#toggle-slideshow').click(function() {
+    //     gallerys[0].slideshow.toggle();
+    //     return false;
+    // });
+    // $('#toggle-description').click(function() {
+    //     if(!gallerys[0].settings.description_wrapper) {
+    //         gallerys[0].settings.description_wrapper = $('#descriptions');
+    //     } else {
+    //         gallerys[0].settings.description_wrapper = false;
+    //     }
+    //     return false;
+    // });
+});
+
+</script>
+</body>
+</html>
