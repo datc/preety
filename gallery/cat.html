@@ -12,26 +12,30 @@
     font-size: 12px;  
     color: #333;
     line-height: 140%;
+    text-align:center;
+    margin-left:auto;margin-right:auto;
 }
 body {
-    padding: 0px 30px;
+    padding: 30px 30px;
     background: #871200;
     /*background:#000 url(bg1.jpg) repeat top left;*/
 }
 p {
-    padding: 10px 0 20px 0; 
+    padding: 10px 0; 
+    text-align:center;
 }
 
 #gallery {
-    padding: 0px;
+    height: 100%;
+    padding: 30px;
     background: #d32f2f;
     text-align:center;
     margin-left:auto;margin-right:auto;
 }
 #descriptions {
     position: relative;
-    width: 640px;
-    height: 50px;
+    width: 680px;
+    /*height: 50px;*/
     background: #EEEEEE;
     /*padding: 10px;*/
     /*margin-top: 10px;*/
@@ -39,6 +43,7 @@ p {
 }
 #descriptions .ad-image-description {
     position: absolute;
+    font-size: 36px;
 }
 #descriptions .ad-image-description .ad-description-title {
     display: block;
@@ -46,7 +51,7 @@ p {
 </style> 
 </head>
 <body>
-    
+    <div style="padding-top: 10px"></div>
     <div id="gallery" class="ad-gallery">
         <div class="ad-image-wrapper"></div>
         <div class="ad-controls"></div>
@@ -55,7 +60,7 @@ p {
                 <ul class="ad-thumb-list">
                     {{range $k,$v :=.gallery_cat}}
                         <li>
-                            <a width="500px" height="800px" href="{{$v.Photo}}?imageView2/2/w/800/h/400">
+                            <a width="500px" height="80%" href="{{$v.Photo}}?imageView2/2/w/800/h/400">
                                 <img src="{{$v.Photo}}?imageView2/2/h/100"  alt="{{$v.Desc}}" class="image{{$k}}">
                             </a>
                         </li>
@@ -82,16 +87,23 @@ p {
         </div>
     </div>
 
-    <!-- <div id="descriptions"></div> -->
-    <p>alter the behaviour on the fly;Effect: 
+    <div id="descriptions">
+        <p>她的名字叫番茄，</p>
+        <p>因为捡到她的哪天吃了这道国菜：<strong>番茄炒蛋</strong>。 </p>
+        <p>番茄时一只流浪猫，</p>
+        <p>脖子上戴着一环粉红色的项圈；</p>
+        <p>她那时1个多月大，看上去不太干净。Orz...</p>
+        <p></p>
+    </div>
+<!--     <p>alter the behaviour on the fly;Effect: 
         <select id="switch-effect">
-            <option value="slide-hori">Slide horizontal</option>
             <option value="slide-vert">Slide vertical</option>
+            <option value="slide-hori">Slide horizontal</option>
             <option value="resize">Shrink/grow</option>
             <option value="fade">Fade</option>
             <option value="">None</option>
         </select><br>
-    </p>
+    </p> -->
 
 <script src="//cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
 <script type="text/javascript" src="jquery.ad-gallery.js"></script>
@@ -106,10 +118,11 @@ $(function() {
     // $('img.image4').data('ad-desc', 'This image is wider than the wrapper, so it has been scaled down');
     // $('img.image5').data('ad-desc', 'This image is higher than the wrapper, so it has been scaled down');
     var gallerys = $('#gallery').adGallery({
-        width: 1200,
-        height: 500,
+        // width: 1200,
+        // height: 1000,
         scroll_jump: 0
     });
+    gallerys[0].settings.effect="slide-vert";
     // setTimeout(function() {
     //     gallerys[0].addImage("image/t7.jpg", "image/7.jpg");
     // }, 1000);
