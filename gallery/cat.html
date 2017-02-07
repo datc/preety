@@ -2,6 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0  ,maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
     <title>番茄的故事</title>
     <link rel="stylesheet" type="text/css" href="jquery.ad-gallery.css">
 <style type="text/css">
@@ -16,7 +17,7 @@
     margin-left:auto;margin-right:auto;
 }
 body {
-    padding: 30px 30px;
+    padding: 20px 30px;
     background: #871200;
     /*background:#000 url(bg1.jpg) repeat top left;*/
 }
@@ -27,14 +28,15 @@ p {
 
 #gallery {
     height: 100%;
-    padding: 30px;
+    padding: 10px;
+    padding-bottom: 20px;
     background: #d32f2f;
     text-align:center;
     margin-left:auto;margin-right:auto;
 }
 #descriptions {
     position: relative;
-    width: 680px;
+    width: 80%;
     /*height: 50px;*/
     background: #EEEEEE;
     /*padding: 10px;*/
@@ -52,7 +54,7 @@ p {
 </head>
 <body>
     <div style="padding-top: 10px"></div>
-    <div id="gallery" class="ad-gallery">
+    <div id="gallery" style="width: 100%" class="ad-gallery">
         <div class="ad-image-wrapper"></div>
         <div class="ad-controls"></div>
         <div class="ad-nav">            
@@ -60,8 +62,8 @@ p {
                 <ul class="ad-thumb-list">
                     {{range $k,$v :=.gallery_cat}}
                         <li>
-                            <a width="500px" height="80%" href="{{$v.Photo}}?imageView2/2/w/800/h/400">
-                                <img src="{{$v.Photo}}?imageView2/2/h/100"  alt="{{$v.Desc}}" class="image{{$k}}">
+                            <a width="100%" height="80%" href="{{$v.Photo}}?imageView2/2/w/800/h/400">
+                                <img src="{{$v.Photo}}?imageView2/2/h/80"  alt="{{$v.Desc}}" class="image{{$k}}">
                             </a>
                         </li>
                     {{end}}
@@ -87,7 +89,7 @@ p {
         </div>
     </div>
 
-    <div id="descriptions">
+    <div id="descriptions" style="width: 100%">
         <p>她的名字叫番茄，</p>
         <p>因为捡到她的哪天吃了这道国菜：<strong>番茄炒蛋</strong>。 </p>
         <p>番茄时一只流浪猫，</p>
@@ -131,7 +133,7 @@ $(function() {
     // $('img.image4').data('ad-desc', 'This image is wider than the wrapper, so it has been scaled down');
     // $('img.image5').data('ad-desc', 'This image is higher than the wrapper, so it has been scaled down');
     var gallerys = $('#gallery').adGallery({
-        // width: 1200,
+        // width: 100%,
         // height: 1000,
         scroll_jump: 0
     });

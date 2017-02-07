@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>番茄的故事</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- 引入 Bootstrap -->
+      <link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+      
+      <!-- HTML5 Shim 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+      <!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
+      <!--[if lt IE 9]>
+         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+         <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+      <![endif]-->
+      <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+      <script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
+
+      <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+      <script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+   </head>
+   <body>
+
+      <div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <div class="carousel slide" id="carousel-314406">
+                <ol class="carousel-indicators">
+                    <li class="active" data-slide-to="0" data-target="#carousel-314406">
+                    </li>
+                    <li data-slide-to="1" data-target="#carousel-314406">
+                    </li>
+                    <li data-slide-to="2" data-target="#carousel-314406">
+                    </li>
+                </ol>
+
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img alt="" src="http://7xku3c.com1.z0.glb.clouddn.com/cat5.pic.jpg" />
+                        <div class="carousel-caption">
+                            <h4>
+                                First Thumbnail label
+                            </h4>
+                            <p>
+                                Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+                            </p>
+                        </div>
+                    </div>
+                    {{range $k,$v :=.gallery_cat}}
+                        <!-- <li>
+                            <a width="100%" height="80%" href="{{$v.Photo}}?imageView2/2/w/800/h/400">
+                                <img src="{{$v.Photo}}?imageView2/2/h/100"  alt="{{$v.Desc}}" class="image{{$k}}">
+                            </a>
+                        </li> -->
+                        <div class="item">
+                        <img alt="" src="{{$v.Photo}}?imageView2/0/w/800/" />
+                        <div class="carousel-caption">
+                            <h4>
+                                $k
+                            </h4>
+                            <p>
+                                {{$v.Desc}}
+                            </p>
+                        </div>
+                        </div>
+                    {{end}}
+                    <div class="item">
+                        <img alt="" src="http://7xku3c.com1.z0.glb.clouddn.com/cat6.pic.jpg" />
+                        <div class="carousel-caption">
+                            <h4>
+                                Second Thumbnail label
+                            </h4>
+                            <p>
+                                Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img alt="" src="http://7xku3c.com1.z0.glb.clouddn.com/cat7.pic.jpg" />
+                        <div class="carousel-caption">
+                            <h4>
+                                Third Thumbnail label
+                            </h4>
+                            <p>
+                                Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+                            </p>
+                        </div>
+                    </div>
+                </div> <a class="left carousel-control" href="#carousel-314406" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> <a class="right carousel-control" href="#carousel-314406" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+   </body>
+</html>
