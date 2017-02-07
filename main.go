@@ -34,11 +34,11 @@ type CatGll struct {
 
 var (
 	gallery_cat = []CatGll{
-		CatGll{"http://7xku3c.com1.z0.glb.clouddn.com/cat28.pic.jpg", `我的名字叫番茄，
+		CatGll{"http://7xku3c.com1.z0.glb.clouddn.com/cat28.pic.jpg", `“我的名字叫番茄，
 因为被捡到的那天，主银吃了这道国菜：番茄炒蛋。
 我是一只流浪猫，
 脖子上戴着一环粉红色的项圈；
-据说我那时有1个多月大，看上去不太干净。Orz...`},
+据说我那时有1个多月大，看上去不太干净。Orz...”`},
 		CatGll{"http://7xku3c.com1.z0.glb.clouddn.com/cat27.pic_hd.jpg", "有点丑吗？"},
 		CatGll{"http://7xku3c.com1.z0.glb.clouddn.com/cat26.pic.jpg", "“我可能是帅的不太明显，而且那只是从前吖。”"},
 		CatGll{"http://7xku3c.com1.z0.glb.clouddn.com/cat25.pic.jpg", "“我觉得作为一只喵，长得怎么样是次要的，关键还是会卖萌，会摆POS（也会讲英语哦😯）。”😊"},
