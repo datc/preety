@@ -65,5 +65,18 @@ var (
 		CatGll{"http://7xku3c.com1.z0.glb.clouddn.com/cat3.pic.jpg", ""},
 		CatGll{"http://7xku3c.com1.z0.glb.clouddn.com/cat2.pic.jpg", ""},
 		CatGll{"http://7xku3c.com1.z0.glb.clouddn.com/cat1.pic.jpg", ""},
+
+		CatGll{"http://7xku3c.com1.z0.glb.clouddn.com/catty1.jpg", ""},
+		CatGll{"http://7xku3c.com1.z0.glb.clouddn.com/catty2.jpg", ""},
+		CatGll{"http://7xku3c.com1.z0.glb.clouddn.com/catty3.jpg", ""},
+		CatGll{"http://7xku3c.com1.z0.glb.clouddn.com/catty4.jpg", ""},
+		CatGll{"http://7xku3c.com1.z0.glb.clouddn.com/catty5.jpg", ""},
+		CatGll{"http://7xku3c.com1.z0.glb.clouddn.com/catty6.jpg", ""},
+		CatGll{"http://7xku3c.com1.z0.glb.clouddn.com/catty7.jpg", ""},
+		CatGll{"http://7xku3c.com1.z0.glb.clouddn.com/catty8.jpg", ""},
+		CatGll{"http://7xku3c.com1.z0.glb.clouddn.com/catty9.jpg", ""},
+		CatGll{"http://7xku3c.com1.z0.glb.clouddn.com/catty10.jpg", ""},
+		CatGll{"http://7xku3c.com1.z0.glb.clouddn.com/catty11.jpg", ""},
+		CatGll{"http://7xku3c.com1.z0.glb.clouddn.com/catty12.jpg", ""},
 	}
 )
