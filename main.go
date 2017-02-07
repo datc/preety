@@ -22,6 +22,12 @@ func main() {
 			ctx.Data["gallery_cat"] = gallery_cat
 			ctx.HTML(200, "cat")
 		})
+		m.Get("2", func(ctx *macaron.Context) {
+			fmt.Println("This is toukii,cat2")
+			ctx.SetTemplatePath("", "gallery")
+			ctx.Data["gallery_cat"] = gallery_cat
+			ctx.HTML(200, "cat2")
+		})
 	})
 
 	m.Run(8080)
