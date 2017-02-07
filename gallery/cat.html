@@ -14,16 +14,18 @@
     line-height: 140%;
 }
 body {
-    padding: 30px;
+    padding: 0px 30px;
+    background: #d9b3e6;
 }
 p {
     padding: 10px 0 20px 0; 
 }
 
 #gallery {
-    padding: 30px;
-    background: #E1EEF5;
-    vertical-align: center;
+    padding: 0px;
+    background: #8192d6;
+    text-align:center;
+    margin-left:auto;margin-right:auto;
 }
 #descriptions {
     position: relative;
@@ -50,10 +52,10 @@ p {
         <div class="ad-nav">            
             <div class="ad-thumbs">
                 <ul class="ad-thumb-list">
-                    {{range $k,$v :=.gattery_cat}}
+                    {{range $k,$v :=.gallery_cat}}
                         <li>
-                            <a href="{{$v}}?imageView2/2/w/800/h/400" title="{{$v}}">
-                                <img src="{{$v}}?imageView2/2/h/100" class="image{{$k}}">
+                            <a href="{{$v.Photo}}?imageView2/2/w/800/h/400">
+                                <img src="{{$v.Photo}}?imageView2/2/h/100"  alt="{{$v.Desc}}" class="image{{$k}}">
                             </a>
                         </li>
                     {{end}}
