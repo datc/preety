@@ -19,13 +19,38 @@
       <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
       <script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
    </head>
+<style type="text/css">
+* {
+    text-align:center;
+    /*height: 600px;*/
+    /*width: 100%;*/
+    margin-left:auto;margin-right:auto;
+}
+body {
+    padding: 20px;
+    background: #871200;
+    /*background:#000 url(bg1.jpg) repeat top left;*/
+}
+p {
+  width: 80%;
+  margin-left:auto;margin-right:auto;
+}
+.container {
+    /*height: 100%;*/
+    /*padding: 10px;*/
+    padding-bottom: 20px;
+    background: #d32f2f;
+    text-align:center;
+    margin-left:auto;margin-right:auto;
+}
+</style>
    <body>
 
-      <div class="container">
+      <div class="container" style="width: 100%;">
     <div class="row clearfix">
         <div class="col-md-12 column">
             <div class="carousel slide" id="carousel-314406">
-                <ol class="carousel-indicators">
+                <!-- <ol class="carousel-indicators">
                     <li class="active" data-slide-to="0" data-target="#carousel-314406">
                     </li>
                     <li data-slide-to="1" data-target="#carousel-314406">
@@ -33,27 +58,18 @@
                     <li data-slide-to="2" data-target="#carousel-314406">
                     </li>
                 </ol>
+ -->
+                <ol class="carousel-indicators">
+                    {{range $k,$v :=.gallery_cat}}
+                        <li class="{{if eq $k 0}}active{{end}}" data-slide-to="{{$k}}" data-target="#carousel-314406">
+                        </li>
+                    {{end}}
+                </ol>
 
                 <div class="carousel-inner">
-                    <div class="item active">
-                        <img alt="" src="http://7xku3c.com1.z0.glb.clouddn.com/cat5.pic.jpg" />
-                        <div class="carousel-caption">
-                            <h4>
-                                First Thumbnail label
-                            </h4>
-                            <p>
-                                Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
-                            </p>
-                        </div>
-                    </div>
                     {{range $k,$v :=.gallery_cat}}
-                        <!-- <li>
-                            <a width="100%" height="80%" href="{{$v.Photo}}?imageView2/2/w/800/h/400">
-                                <img src="{{$v.Photo}}?imageView2/2/h/100"  alt="{{$v.Desc}}" class="image{{$k}}">
-                            </a>
-                        </li> -->
-                        <div class="item">
-                        <img alt="" src="{{$v.Photo}}?imageView2/1/w/1150/h/600" />
+                        <div class="item {{if eq $k 0}}active{{end}}">
+                        <img alt="" src="{{$v.Photo}}?imageView2/2/w/700" />
                         <div class="carousel-caption">
                             <h4>
                                 {{$k}}
